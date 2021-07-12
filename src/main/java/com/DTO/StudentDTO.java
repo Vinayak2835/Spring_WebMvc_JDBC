@@ -2,29 +2,16 @@ package com.DTO;
 
 public class StudentDTO {
 	
-	
-	
-
 	private int id;
-	
-	
-
-	
-
 	private String name;
-	
 	private Long mobile;
-	
 	private String country;
-	
-	
 	
 	public int getId() {
 		return id;
 	}
 
-
-	public void setId(int id) {
+        public void setId(int id) {
 		this.id = id;
 	}
 
@@ -37,27 +24,19 @@ public class StudentDTO {
 		this.name = name;
 	}
 	
-
 	public Long getMobile() {
 		return mobile;
 	}
 
-
-	public void setMobile(Long mobile) {
+        public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
 
-
-
-	
-
-
-	public String getCountry() {
+        public String getCountry() {
 		return country;
 	}
 
-
-	public void setCountry(String country) {
+         public void setCountry(String country) {
 		this.country = country;
 	}
 	
@@ -65,10 +44,4 @@ public class StudentDTO {
 	public String toString() {
 		return " [id=" + id + ", name=" + name + ", mobile=" + getMobile() + ", country=" + country + "]";
 	}
-
-
-
-
-	
-
 }
