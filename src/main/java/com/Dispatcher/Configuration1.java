@@ -19,50 +19,33 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages="com.Controller,com.ResultSetExtractor,com.StudentService")
 public class Configuration1 implements WebMvcConfigurer{
 	
-	@Bean
-    public 	InternalResourceViewResolver  resolver1()
-    {
-    	
-    	InternalResourceViewResolver  resolver=new 	InternalResourceViewResolver();
-    	
-    	
-    	
-    	resolver.setPrefix("/WEB-INF/view/");
-    	
-    	resolver.setSuffix(".jsp");
-    	
-    	return resolver;
-    	
-    }
+    @Bean
+    public InternalResourceViewResolver  resolver1() {
+    	   
+	    InternalResourceViewResolver  resolver = new InternalResourceViewResolver();
+    	    resolver.setPrefix("/WEB-INF/view/");
+            resolver.setSuffix(".jsp");
+            return resolver;
+        }
 	
 	@Bean
-	public JdbcTemplate jdbctemplate()
-	{
+	public JdbcTemplate jdbctemplate() {
 		
-		JdbcTemplate  jdbcTemplate=new JdbcTemplate(dataSource());
-		
-		
+		JdbcTemplate  jdbcTemplate = new JdbcTemplate(dataSource());
 		return jdbcTemplate;
-		
 	}
 	
 	@Bean
-	public DataSource  dataSource()
-	{
+	public DataSource  dataSource() {
 		
-		DriverManagerDataSource dataSource=new DriverManagerDataSource();
-		
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
 		dataSource.setPassword("root");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/school1?useSSL=false"); 
-		
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		
-		
-		
 		return dataSource;
-		
-}
+	}
 	
 	
 	
