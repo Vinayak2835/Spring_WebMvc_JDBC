@@ -13,25 +13,12 @@ public class dispatcherServletClass implements WebApplicationInitializer {
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		
-		
-		AnnotationConfigWebApplicationContext  web=new AnnotationConfigWebApplicationContext();
-		
-		
+		AnnotationConfigWebApplicationContext  web = new AnnotationConfigWebApplicationContext();
 		web.register(Configuration1.class);
-		
-		
-		
-		DispatcherServlet dispatcher=new DispatcherServlet(web);
-		
-		
-		ServletRegistration.Dynamic  dynamic=servletContext.addServlet("myservlet",dispatcher);
-		
-		
+	        DispatcherServlet dispatcher=new DispatcherServlet(web);
+	        ServletRegistration.Dynamic  dynamic=servletContext.addServlet("myservlet",dispatcher);
 		dynamic.setLoadOnStartup(1);
-		
 		dynamic.addMapping("/");
 		
-		
-}
-
+	}
 }
